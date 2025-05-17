@@ -12,7 +12,6 @@ int main() {
 		cin >> arr[i];
 	}
 	int max = 0;
-	int tmp[3] = { 0,0,0 };
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < n; j++) {
 			for (int k = 0; k < n; k++) {
@@ -20,7 +19,6 @@ int main() {
 
 				if (i != j && j != k && i != k && sum <= m && sum > max) {
 					max = sum;
-					tmp[0] = i; tmp[1] = j; tmp[2] = k;
 				}
 			}
 		}
