@@ -1,14 +1,14 @@
-n, m = map(int,input().split())
+import sys
+from itertools import product
 
-arr = []
+input = sys.stdin.readline
+N, M = map(int, input().split())
 
-def dfs(depth):
-    if depth == m:
-        print(' '.join(map(str, arr)))
-        return
-    for i in range(1, n+1):
-        arr.append(i)
-        dfs(depth + 1)
-        arr.pop()
+digits = [str(i) for i in range(1, N + 1)]
+out = []
+append = out.append
 
-dfs(0)
+for tup in product(range(N), repeat=M):
+    append(' '.join(digits[i] for i in tup))
+
+sys.stdout.write('\n'.join(out))
