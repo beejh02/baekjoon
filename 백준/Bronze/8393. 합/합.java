@@ -1,10 +1,20 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Main {
-    public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		int input = sc.nextInt();
-		
-		System.out.println(input*(input+1)/2);
-	}
+    public static void main(String args[]) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String a = br.readLine();
+        int b = Integer.parseInt(a);
+        
+        int hap=0;
+
+        for(int i=0; i<b; i++) {
+            hap += i+1;
+        }
+
+        System.out.println(hap);
+
+    }
 }
