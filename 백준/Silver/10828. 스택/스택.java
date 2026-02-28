@@ -1,16 +1,15 @@
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Stack;
 import java.util.StringTokenizer;
 
-class Main {
+public class Main {
     public static void main(String args[]) throws IOException {
-
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int play = Integer.parseInt(br.readLine());
+        StringBuilder sb = new StringBuilder();
 
+        int play = Integer.parseInt(br.readLine());
         Stack<Integer> stack = new Stack<>();
 
         for (int i = 0; i < play; i++) {
@@ -18,36 +17,31 @@ class Main {
             String firstValue = st.nextToken();
 
             switch (firstValue) {
-                case "push" ->
+                case "push":
                     stack.push(Integer.valueOf(st.nextToken()));
-                case "top" -> {
-                    if (stack.empty()) {
-                        System.out.println(-1); 
+                    break;
+                case "pop":
+                    if (stack.isEmpty()) {
+                        sb.append(-1).append("\n"); 
                     }else {
-                        System.out.println(stack.peek());
+                        sb.append(stack.pop()).append("\n");
                     }
-                }
-                case "empty" -> {
-                    if (stack.empty()) {
-                        System.out.println(1); 
+                    break;
+                case "size":
+                    sb.append(stack.size()).append("\n");
+                    break;
+                case "empty":
+                    sb.append(stack.isEmpty() ? 1 : 0).append("\n");
+                    break;
+                case "top":
+                    if (stack.isEmpty()) {
+                        sb.append(-1).append("\n"); 
                     }else {
-                        System.out.println(0);
+                        sb.append(stack.peek()).append("\n");
                     }
-                }
-                case "pop" -> {
-                    if (stack.empty()) {
-                        System.out.println(-1); 
-                    }else {
-                        System.out.println(stack.pop());
-                    }
-                }
-                case "size" -> {
-                    System.out.println(stack.size());
-                }
-                default -> {
-                }
+                    break;
             }
         }
-
+        System.out.print(sb);
     }
 }
