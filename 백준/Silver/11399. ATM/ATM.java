@@ -10,7 +10,6 @@ class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int capacity = Integer.parseInt(br.readLine());
         int[] arr = new int[capacity];
-        int[] result = new int[capacity];
         int summary = 0;
         int answer = 0;
 
@@ -23,11 +22,7 @@ class Main {
 
         for (int i = 0; i < capacity; i++) {
             summary += arr[i];
-            result[i] = summary;
-        }
-
-        for (int item : result) {
-            answer += item;
+            answer += summary;
         }
 
         System.out.println(answer);
