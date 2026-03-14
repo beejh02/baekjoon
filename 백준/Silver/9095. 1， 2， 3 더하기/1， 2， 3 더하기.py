@@ -1,14 +1,15 @@
-play = int(input())
+import sys
 
-for i in range(play):
-    n = int(input())
-    arr = [0 for i in range(n+1)]
-    arr[1] = 1
-    if(n >= 2):
-        arr[2] = 2
-    if (n >= 3):
-        arr[3]=4
-    for i in range(4,n+1):
-        arr[i] = arr[i-1] + arr[i-2] + arr[i-3]
-    print(arr[-1])
+play = int(sys.stdin.readline())
 
+dp = [0] * 11
+dp[1] = 1
+dp[2] = 2
+dp[3] = 4
+
+for i in range(4, 11):
+    dp[i] = dp[i-1] + dp[i-2] + dp[i-3]
+
+for _ in range(play):
+    n = int(sys.stdin.readline())
+    print(dp[n])
