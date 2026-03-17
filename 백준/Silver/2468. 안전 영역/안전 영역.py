@@ -2,12 +2,11 @@ import sys
 sys.setrecursionlimit(100000)
 
 def DFS(rainfall, nowy, nowx):
-    if(visited[nowy][nowx] == False and arr[nowy][nowx] > rainfall):
-        visited[nowy][nowx] = True
-        for dy, dx in directions:
-            ny, nx = dy+nowy, dx+nowx
-            if(0 <= ny < n and 0 <= nx < n and arr[ny][nx] > rainfall and visited[ny][nx] == False):
-                DFS(rainfall, ny, nx)
+    visited[nowy][nowx] = True
+    for dy, dx in directions:
+        ny, nx = dy+nowy, dx+nowx
+        if(0 <= ny < n and 0 <= nx < n and arr[ny][nx] > rainfall and visited[ny][nx] == False):
+            DFS(rainfall, ny, nx)
 
 
 n = int(input())
