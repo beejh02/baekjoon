@@ -1,5 +1,6 @@
 import sys
 sys.setrecursionlimit(100000)
+input = sys.stdin.readline
 
 def DFS(rainfall, nowy, nowx):
     visited[nowy][nowx] = True
