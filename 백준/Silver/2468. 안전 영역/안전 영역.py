@@ -13,13 +13,14 @@ def DFS(rainfall, nowy, nowx):
 n = int(input())
 directions = [(-1,0), (0,1), (1,0), (0,-1)]
 arr = []
-ans = 0
+ans = 1
 for i in range(n):
     arr.append(list(map(int,input().split())))
 max_height = max(max(_) for _ in arr)
+min_height = min(min(_) for _ in arr)
 
 
-for h in range(max_height + 1):
+for h in range(min_height, max_height):
     visited = [[False] * n for _ in range(n)]
     count = 0
     
