@@ -13,7 +13,7 @@ for i in range(h):
     for j in range(n):
         for k in range(m):
             if layer[j][k] == 1:
-                queue.append([i, j, k])
+                queue.append((i, j, k))
     arr.append(layer)
 
 directions = [(-1, 0, 0), (1, 0, 0), (0, -1, 0), (0, 1, 0), (0, 0, 1), (0, 0, -1)]
