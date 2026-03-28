@@ -1,4 +1,6 @@
-string = input()
+import sys
+
+string = sys.stdin.readline().rstrip()
 
 arr = [0 for i in range(26)]
 
